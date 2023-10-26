@@ -31,7 +31,7 @@
             width: 300px;
             height: 100%;
             padding: 20px 0px;
-            transition: all 0.5s ease;
+            transition: all 0.3s ease;
             overflow-y: auto;
             z-index: 2; 
         }
@@ -39,6 +39,7 @@
             width: 0;
         }
         .wrapper .sidebar .profile {
+            margin-top: 30px;
             margin-bottom: 35px;
             text-align: center;
         }
@@ -173,7 +174,7 @@
             </div>
             <ul>
                 <li>
-                    <a href="{{ route('home') }}" class="active">
+                    <a href="{{ route('home') }}" >
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="item">Home</span>
                     </a>
@@ -181,19 +182,19 @@
                 <li>
                     <a href="{{route('dashboard.index')}}" >
                         <span class="icon"><i class="fas fa-desktop"></i></span>
-                        <span class="item">My Dashboard</span>
+                        <span class="item">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('positions.index')}}">
                         <span class="icon"><i class="fas fa-user-friends"></i></span>
-                        <span class="item">People</span>
+                        <span class="item">Data Jabatan</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('tunjangans.index')}}">
                         <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                        <span class="item">Perfomance</span>
+                        <span class="item">Data Tunjangan</span>
                     </a>
                 </li>
                 <li>

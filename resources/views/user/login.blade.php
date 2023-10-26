@@ -15,14 +15,17 @@
         color: white;
     }
     .container {
-        background-color:transparent;
-        padding: 20px;
+        background-color:white;
+        padding: 40px;
+        padding-top: 50px ;
         border-radius: 10px;
         margin: 0 auto;
+        /* width: 50%; */
         max-width: 70%;
     }
     .logo {
         text-align: center;
+        padding: 50px;
     }
     .logo img {
         max-width: 100px;
@@ -37,6 +40,15 @@
         height: 40px;
         margin-top: 40px;
     }
+    label {
+        color: black;
+        /* text-transform: uppercase; */
+    }
+    
+    .text-center {
+        color: black; /* Warna teks hitam */
+    }
+    
 </style>
 
 <body>

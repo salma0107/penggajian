@@ -12,6 +12,14 @@ class DashboardController extends Controller
 {
         public function index()
     {
-        // Kode logika untuk halaman dashboard
+        $title = "My Dashboard";
+        return view('dashboard', compact('title'));
     }
 }
+
+// public function index()
+//     {
+//         $title = "Data Penempatan";
+//         $penempatans = Penempatan::orderBy('id', 'asc')->paginate(5);
+//         return view('penempatans.index', compact('title', 'penempatans'));
+//     }
