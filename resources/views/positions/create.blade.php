@@ -1,9 +1,11 @@
 @extends('app')
 @section('content')
+
 <form action="{{ route('positions.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
+    <br>
     <div class="row g-3">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 mb-2">
             <div class="form-group">
                 <strong>Jabatan</strong>
                 <input type="text" name="jabatan" class="form-control" placeholder="Isi jabatan disisni">
@@ -12,7 +14,7 @@
                 @enderror
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 mb-2">
             <div class="form-group">
                 <strong>Gaji Pokok</strong>
                 <input type="text" name="gaji pokok" class="form-control" placeholder="isi gaji pokok disini">
@@ -22,7 +24,7 @@
             </div>
         </div>
         
-        <button type="submit" class="btn btn-primary ml-3">Submit</button>
+        <button type="submit" class="btn btn-primary ml-2">Submit</button>
     </div>
 </form>
 @endsection

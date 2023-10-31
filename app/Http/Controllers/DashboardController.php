@@ -12,14 +12,8 @@ class DashboardController extends Controller
 {
         public function index()
     {
-        $title = "My Dashboard";
+        $title = "Dashboard";
         return view('dashboard', compact('title'));
     }
 }
 
-// public function index()
-//     {
-//         $title = "Data Penempatan";
-//         $penempatans = Penempatan::orderBy('id', 'asc')->paginate(5);
-//         return view('penempatans.index', compact('title', 'penempatans'));
-//     }

@@ -5,19 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tunjangans extends Model
+class Pegawais extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'tunjangan',
+        'no_pegawai',
+        'nama_pegawai',
+        'email',
+        'alamat',
         'position_id',
-        'besar_tunjangan',
+        'golongan',
+        'status_perkawinan',
+        'no_rekening',
     ];
 
     public function position()
     {
         return $this->belongsTo(Positions::class, 'position_id');
     }
-
 }

@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
-<form action="{{ route('positions.update',$position->id) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('positions.update', $position->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="row">
@@ -16,7 +16,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Gaji Pokok</strong>
-                <input type="text" name="gaji pokok" class="form-control" placeholder="isi gaji pokok" value="{{ $position->gaji_pokok }}">
+                <input type="text" name="gaji_pokok" class="form-control" placeholder="Isi gaji pokok" value="{{ $position->gaji_pokok }}">
                 @error('gaji_pokok')
                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                 @enderror

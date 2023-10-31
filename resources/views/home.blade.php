@@ -2,15 +2,20 @@
 @section('content')
 
 <style>
-    .custom-container {
-        margin: 100px 20px; /* Mengatur margin atas dan bawah untuk menengahkan vertikal */
-        max-width: 100%; /* Sesuaikan lebar maksimum sesuai kebutuhan Anda */
-        background: #F6BC15; /* Tambahkan latar belakang jika diperlukan */
-        padding: 50px; /* Tambahkan padding sesuai kebutuhan Anda */
-        text-align: center;
-        border-radius: 20px;
+       .custom-container {
+        background-color: transparent; /* Hapus latar belakang agar bisa melihat gambar latar belakang */
+    }
+
+    .table {
+        color: white; /* Mengatur warna teks tabel menjadi putih */
+        text-align: center; /* Rata tengah semua teks dalam tabel */
+    }
+
+    .table th {
+        background-color: transparent; /* Hapus latar belakang th agar sesuai dengan gambar latar belakang */
     }
 </style>
+
 
 <div class="custom-container">
     <table class="table">

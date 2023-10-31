@@ -3,7 +3,33 @@
 @extends('app')
 @section('content')
 
-<table class="table">
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        background: white;
+        margin: 100px 20px;
+    }
+
+    .box {
+        flex: 1;
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin: 0 5px; 
+    }
+</style>
+
+<div class="container" style="justify-content: center;">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+<table class="table m-3">
   <thead>
     <tr>
       <th scope="col">#</th>

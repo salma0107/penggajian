@@ -5,7 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title', $title)</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.6/css/jquery.dataTables.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
   <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -18,7 +21,11 @@
             font-family: 'Open Sans', sans-serif;
         }
         body {
-            background: #f5f6fa;
+            /* background: #D3D3D3; */
+            background-image: url('/images/blue.jpg'); /* Ganti 'url_gambar_anda.jpg' dengan URL gambar yang ingin Anda gunakan */
+            background-size: cover; /* Mengatur gambar latar belakang agar menutupi seluruh area body */
+            background-repeat: no-repeat; /* Menghindari pengulangan gambar latar belakang */
+            background-attachment: fixed; /* Membuat gambar latar belakang tetap saat menggulir halaman */
         }
         .wrapper {
             display: flex;
@@ -140,12 +147,15 @@
         }
 
         .container {
-            margin: 100px 20px;
+            margin: 50px 10px;
             max-width: 100%;
-            background: white;
-            padding: 20px;
+            padding: 20px; */
+            background: red;
+        }
+        .container h1 {
+            margin-bottom: 20px; /* Add margin-bottom to create space below the h1 element */
             text-align: center;
-            border-radius: 20px;
+            margin-left: 20px;
         }
  
     </style>
@@ -198,9 +208,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('pegawais.index')}}">
                         <span class="icon"><i class="fas fa-database"></i></span>
-                        <span class="item">Development</span>
+                        <span class="item">Data Pegawai</span>
                     </a>
                 </li>
                 <li>
@@ -256,5 +266,14 @@
         section.classList.toggle("active");
     });
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="hhttps://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    @yield('js')
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+
 </body>
 </html>
