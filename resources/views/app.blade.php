@@ -21,11 +21,11 @@
             font-family: 'Open Sans', sans-serif;
         }
         body {
-            /* background: #D3D3D3; */
-            background-image: url('/images/blue.jpg'); /* Ganti 'url_gambar_anda.jpg' dengan URL gambar yang ingin Anda gunakan */
-            background-size: cover; /* Mengatur gambar latar belakang agar menutupi seluruh area body */
-            background-repeat: no-repeat; /* Menghindari pengulangan gambar latar belakang */
-            background-attachment: fixed; /* Membuat gambar latar belakang tetap saat menggulir halaman */
+            background: white;
+            /* background-image: url('/images/blue.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; */
         }
         .wrapper {
             display: flex;
@@ -41,6 +41,7 @@
             transition: all 0.3s ease;
             overflow-y: auto;
             z-index: 2; 
+            background-image: url('/images/blue.jpg');
         }
         .wrapper .sidebar.active {
             width: 0;
@@ -214,9 +215,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('divisis.index')}}">
                         <span class="icon"><i class="fas fa-chart-line"></i></span>
-                        <span class="item">Reports</span>
+                        <span class="item">Data Divisi</span>
                     </a>
                 </li>
                 <li>
@@ -251,7 +252,7 @@
         </div>
         @endauth
         <div class="container">
-            <h1>@yield('title', $title)</h1>
+            <!-- <h1>@yield('title', $title)</h1> -->
             @yield('content')
         </div>
     </div>

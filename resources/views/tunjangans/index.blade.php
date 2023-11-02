@@ -1,6 +1,13 @@
 @extends('app')
 @section('content')
 
+@if(session('success'))
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+  </div>
+@endif
+
 <style>
     .custom-container {
         margin: 0px 20px;
@@ -15,6 +22,7 @@
     .table {
         width: 100%;
         border-collapse: collapse;
+        border-radius: 10px;
     }
 
     .table th, .table td {
@@ -31,14 +39,12 @@
     .table tr:hover {
         background-color: #e6e6e6;
     }
+    .h1 {
+      
+    }
 </style>
 
-@if(session('success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  {{ session('success') }}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-</div>
-@endif
+<h1>Data Tunjangan</h1>
 
 <div class="text-end mb-3 mt-4">
     <a class="btn btn-success" href="{{ route('tunjangans.create') }}">

@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\TunjanganController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\DivisiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,8 @@ Route::middleware('auth')->group(
         // Route Pegawai
         Route::resource('pegawais', PegawaiController::class);
 
-
+        // Route Divisi
+        Route::resource('divisis', DivisiController::class);
 
     }
 );

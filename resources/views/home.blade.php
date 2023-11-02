@@ -2,19 +2,111 @@
 @section('content')
 
 <style>
-       .custom-container {
-        background-color: transparent; /* Hapus latar belakang agar bisa melihat gambar latar belakang */
+    .custom-container {
+        background-color: transparent; 
     }
-
     .table {
-        color: white; /* Mengatur warna teks tabel menjadi putih */
-        text-align: center; /* Rata tengah semua teks dalam tabel */
+        color: black; 
+        text-align: center;
+    }
+    .table th {
+        background-color: transparent;
+    }
+    .rectangle-all {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .Rectangle {
+        width: 320px;
+        height: 120px;
+        background: white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        justify-content: space-between;
+    }
+    .text-container {
+        display: flex;
+        flex-direction: column; /* Mengatur tata letak menjadi satu kolom */
+    }
+    .text-rectangle {
+        color: black;
+        font-size: 15px;
+        font-family: 'Alike Angular';
+        font-weight: 400;
+        letter-spacing: 0.38px;
+        word-wrap: break-word;
+        margin-left: 15px;
+    }
+    .text-jumlah {
+        color: black;
+        font-size: 40px;
+        font-family: Allerta;
+        font-weight: 400;
+        word-wrap: break-word;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+    .PegawaiImage {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-right: 10px;
+    }
+    @media screen and (max-width: 768px) {
+        .rectangle-all {
+            flex-direction: column;
+        }
+        .Rectangle {
+            width: 90%;
+        }
     }
 
-    .table th {
-        background-color: transparent; /* Hapus latar belakang th agar sesuai dengan gambar latar belakang */
-    }
 </style>
+
+<div>
+    <div style="color: black; font-size: 35px; font-family: Allerta; font-weight: 400; word-wrap: break-word">DASHBOARD</div>
+    <div style="color: #054468; font-size: 25px; font-family: Allerta; font-weight: 400; word-wrap: break-word">PT. INTI PINDAD MITRA SEJATI</div>
+</div>
+
+<div class="rectangle-all">
+        <div class="Rectangle">
+            <div class="text-container">
+                <div class="text-rectangle">Jumlah Pegawai</div>
+                <div class="text-jumlah">12</div>
+            </div>
+            <img class="PegawaiImage" src="/images/pegawai.jpg" alt="Jumlah Pegawai">
+        </div>
+        
+        <div class="Rectangle">
+            <div class="text-container">
+                <div class="text-rectangle">Jumlah Pegawai</div>
+                <div class="text-jumlah">12</div>
+            </div>
+            <img class="PegawaiImage" src="/images/pegawai.jpg" alt="Jumlah Pegawai">
+        </div>
+
+        <div class="Rectangle">
+            <div class="text-container">
+                <div class="text-rectangle">Jumlah Pegawai</div>
+                <div class="text-jumlah">12</div>
+            </div>
+            <img class="PegawaiImage" src="/images/pegawai.jpg" alt="Jumlah Pegawai">
+        </div>
+
+        <div class="Rectangle">
+            <div class="text-container">
+                <div class="text-rectangle">Jumlah Pegawai</div>
+                <div class="text-jumlah">12</div>
+            </div>
+            <img class="PegawaiImage" src="/images/pegawai.jpg" alt="Jumlah Pegawai">
+        </div>
+  </div>
 
 
 <div class="custom-container">

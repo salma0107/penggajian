@@ -22,14 +22,16 @@
     }
 </style>
 
-<div class="container" style="justify-content: center;">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-</div>
+<div class="Rectangle3" style="width: 100%; height: 100%; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 15px"></div>
+<div class="JumlahPegawai" style="left: 364px; top: 285px; position: absolute; color: black; font-size: 15px; font-family: Alike Angular; font-weight: 400; letter-spacing: 0.38px; word-wrap: break-word">Jumlah Pegawai</div>
+<div style="left: 763px; top: 314px; position: absolute; color: black; font-size: 40px; font-family: Allerta; font-weight: 400; word-wrap: break-word">12</div>
+<div class="JumlahAdmin" style="left: 764px; top: 285px; position: absolute; color: black; font-size: 15px; font-family: Alike Angular; font-weight: 400; letter-spacing: 0.38px; word-wrap: break-word">Jumlah Admin</div>
+<div style="left: 1166px; top: 314px; position: absolute; color: black; font-size: 40px; font-family: Allerta; font-weight: 400; word-wrap: break-word">12</div>
+<div class="JumlahJabatan" style="left: 1167px; top: 285px; position: absolute; color: black; font-size: 15px; font-family: Alike Angular; font-weight: 400; letter-spacing: 0.38px; word-wrap: break-word">Jumlah Jabatan</div>
+<img class="1" style="width: 144px; height: 144px; left: 904px; top: 257px; position: absolute; border-top-left-radius: 15px" src="https://via.placeholder.com/144x144" />
 
-<table class="table m-3">
+
+<!-- <table class="table m-3">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -57,5 +59,5 @@
       <td>@twitter</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 @endsection
