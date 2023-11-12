@@ -33,6 +33,12 @@ Route::middleware('auth')->group(
         Route::post('password', [UserController::class, 'password_action'])->name('password.action');
         Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
+        // Route Calendar
+        Route::get('/calendar', function () {
+            $title = "My Calendar";
+            return view('calendar', compact('title'));
+        })->name('calendar');
+
         // Route Dashboard
         Route::get('dashboard', [DashboardController::class])->name('dashboard.index');
         Route::resource('dashboard', DashboardController::class);
@@ -47,7 +53,9 @@ Route::middleware('auth')->group(
         Route::resource('pegawais', PegawaiController::class);
 
         // Route Divisi
-        Route::resource('divisis', DivisiController::class);
+        Route::resource('divises', DivisiController::class);
 
+        
+        
     }
 );

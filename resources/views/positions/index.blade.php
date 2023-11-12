@@ -8,70 +8,76 @@
 </div>
 @endif
 
-<div class="text-end mb-1 mt-5 mr-5">
-  <a class="btn btn-danger" href="#">
-      <i class="fas fa-file-pdf"></i> Export PDF
-  </a>
-
-  <a class="btn btn-success" href="#">
-      <i class="fas fa-file-excel"></i> Export Excel
-  </a>
-
-  <a class="btn btn-warning" href="{{ route('positions.create') }}">
-      <i class="fas fa-plus"></i> Create
-  </a>
-</div>
-
 <style>
-    .container {
-      margin: 100px 20px; /* Mengatur margin atas dan bawah untuk menengahkan vertikal */
-        max-width: 100%; /* Sesuaikan lebar maksimum sesuai kebutuhan Anda */
-        background: white; /* Tambahkan latar belakang jika diperlukan */
-        padding: 50px; /* Tambahkan padding sesuai kebutuhan Anda */
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
     .custom-container {
-        margin: 10px 20px; /* Mengatur margin atas dan bawah untuk menengahkan vertikal */
-        max-width: 100%; /* Sesuaikan lebar maksimum sesuai kebutuhan Anda */
+        margin: 0px 50px;
+        max-width: 100%;
         background: white;
-        padding: 50px; /* Tambahkan padding sesuai kebutuhan Anda */
         text-align: center;
-        border-radius: 10px;
-        /* border: 1px solid #A9A9A9;  */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     }
 
+    .custom-container-up {
+        margin: 50px 50px 10px 50px; /* top-right-bottom-left */
+        max-width: 100%;
+    }
+
+    /* Style the table */
     .table {
         width: 100%;
         border-collapse: collapse;
-        margin: 0 auto;
+        border-radius: 10px;
     }
 
     .table th,
     .table td {
+        border: 1px solid #e3e3e3;
+        padding: 10px;
         text-align: center;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9;
     }
 
     .table tr:hover {
         background-color: #e6e6e6;
     }
-    
-    .text-end {
-      margin-right: 20px;
+
+    h1 {
+        margin-top: 20px;
     }
 </style>
+
+<h1>DATA JABATAN</h1>
+
+<div class="custom-container-up">
+    <div class="text-end mb-1 mt-5 mr-5">
+        <a class="btn btn-danger" href="#">
+            <i class="fas fa-file-pdf"></i> Export PDF
+        </a>
+
+        <a class="btn btn-success" href="#">
+            <i class="fas fa-file-excel"></i> Export Excel
+        </a>
+
+        <a class="btn btn-warning" href="{{ route('positions.create') }}">
+            <i class="fas fa-plus"></i> Create New
+        </a>
+    </div>
+</div>
 
 <div class="custom-container">
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">No</th>
-                <th scope="col">Jabatan</th>
-                <th scope="col">Gaji Pokok</th>
-                <th scope="col">Actions</th>
+                <th scope="col">NO</th>
+                <th scope="col">JABATAN</th>
+                <th scope="col">GAJI POKOK</th>
+                <th scope="col">ACTIONS</th>
             </tr>
         </thead>
         <tbody>
@@ -83,10 +89,14 @@
                 <td>{{ $data->gaji_pokok }}</td>
                 <td>
                     <form action="{{ route('positions.destroy', $data->id) }}" method="Post">
-                        <a class="btn btn-primary" href="{{ route('positions.edit', $data->id) }}">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('positions.edit', $data->id) }}">
+                            <i class="fas fa-pencil-alt"></i> Edit
+                        </a>
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
                     </form>
                 </td>
             </tr>

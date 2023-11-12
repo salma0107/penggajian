@@ -2,20 +2,24 @@
 @section('content')
 
 @if(session('success'))
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('success') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-  </div>
+</div>
 @endif
 
 <style>
     .custom-container {
-        margin: 0px 20px;
+        margin: 0px 50px;
         max-width: 100%;
         background: white;
-        padding: 30px;
         text-align: center;
-        border-radius: 10px;
+    }
+
+    .custom-container-up {
+        margin: 50px 50px -5px 50px; /* top-right-bottom-left */
+        max-width: 100%;
+
     }
 
     /* Style the table */
@@ -25,70 +29,88 @@
         border-radius: 10px;
     }
 
-    .table th, .table td {
+    .table th,
+    .table td {
         border: 1px solid #e3e3e3;
         padding: 10px;
         text-align: center;
     }
+
     .table th {
         background-color: #f2f2f2;
     }
+
     .table tr:nth-child(even) {
         background-color: #f9f9f9;
     }
+
     .table tr:hover {
         background-color: #e6e6e6;
     }
-    .h1 {
-      
+
+    h1 {
+        margin-top: 20px;
     }
 </style>
 
-<h1>Data Tunjangan</h1>
+<h1>DATA TUNJANGAN</h1>
 
-<div class="text-end mb-3 mt-4">
-    <a class="btn btn-success" href="{{ route('tunjangans.create') }}">
-        <i class="fas fa-plus"></i> Add Tunjangan
-    </a>
+<div class="custom-container-up">
+    <div class="text-end mb-3 mt-4">
+        <a class="btn btn-danger" href="#">
+            <i class="fas fa-file-pdf"></i> Export PDF
+        </a>
+        <a class="btn btn-success" href="#">
+            <i class="fas fa-file-excel"></i> Export Excel
+        </a>
+        <a class="btn btn-warning" href="{{ route('tunjangans.create') }}">
+            <i class="fas fa-plus"></i> Create New
+        </a>
+    </div>
 </div>
 
 <div class="custom-container">
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Tunjangan</th>
-      <th scope="col">Jabatan</th>
-      <th scope="col">Besar Tunjangan</th>
-      <th scope="col">Actions</th>
-  </tr>
-  </thead>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">NO</th>
+                <th scope="col">NAMA TUNJANGAN</th>
+                <th scope="col">JABATAN</th>
+                <th scope="col">BESAR TUNJANGAN</th>
+                <th scope="col">ACTION</th>
+            </tr>
+        </thead>
 
-  <tbody>
-    @php $no = 1 @endphp
-    @foreach ($tunjangans as $data)
-    <tr>
-      <td>{{ $no++ }}</td>
-      <td>{{ $data->tunjangan }}</td>
-      <td>{{ 
-          (isset($data->position->jabatan)) ? 
-          $data->position->jabatan : 
-          'Tidak Ada'
-          }}
-      </td>
-      <td>{{ $data->besar_tunjangan }}</td>
-      <td>
-        <form action="{{ route('tunjangans.destroy', $data->id) }}" method="POST">
-          <a class="btn btn-primary" href="{{ route('tunjangans.edit', $data->id) }}">Edit</a>
-          @csrf
-          @method('DELETE')
-          <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
-      </td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
-        </div>
+        <tbody>
+            @php $no = 1 @endphp
+            @foreach ($tunjangans as $data)
+            <tr>
+                <td>{{ $no++ }}</td>
+                <td>{{ $data->tunjangan }}</td>
+                <td>{{
+                    (isset($data->position->jabatan)) ?
+                    $data->position->jabatan :
+                    'Tidak Ada'
+                    }}
+                </td>
+                <td>{{ $data->besar_tunjangan }}</td>
+                <td>
+                    <form action="{{ route('tunjangans.destroy', $data->id) }}" method="POST">
+                        <a class="btn btn-primary" href="{{ route('tunjangans.edit', $data->id) }}">
+                            <i class="fas fa-pencil-alt"></i> Edit
+                        </a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
 @endsection
