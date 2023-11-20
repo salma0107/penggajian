@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Positions;
+use App\Models\User;
 use Illuminate\Http\Request;
+use PDF;
 
 class PositionController extends Controller
 {
@@ -60,5 +62,11 @@ class PositionController extends Controller
         return redirect()->route('positions.index')->with('success','Position has been deleted successfully');
     }
 
-
+    public function exportPdf()
+    {
+        $title = "Laporan Data Jabatan";
+        $positions = Positions::orderBy('id', 'asc')->get();
+        $pdf = PDF::loadView('positions.pdf', compact(['positions', 'title']));
+        return $pdf->stream('laporan-jabatan-pdf');
+    }
 }

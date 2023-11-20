@@ -17,9 +17,8 @@
     }
 
     .custom-container-up {
-        margin: 50px 50px -5px 50px; /* top-right-bottom-left */
+        margin: 50px 50px 10px 50px; /* top-right-bottom-left */
         max-width: 100%;
-
     }
 
     /* Style the table */
@@ -53,7 +52,7 @@
     }
 </style>
 
-<h1>DATA JABATAN</h1>
+<h1>DATA PEGAWAI</h1>
 
 <div class="custom-container-up">
     <div class="text-end mb-2">

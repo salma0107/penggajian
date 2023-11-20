@@ -190,7 +190,7 @@
     body {
         font-family: "Lato", Arial, sans-serif;
         font-size: 16px;
-        line-height: 1.8;
+        /* line-height: 1.8; */
         font-weight: normal;
         background: #f8f9fd;
         color: gray;
@@ -201,7 +201,7 @@
     }
 
     .rectangle-all {
-        margin-top: 0;
+        margin-top: 30px;
         margin-left: 8px;
         display: flex;
         flex-wrap: wrap;
@@ -338,7 +338,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin: 10px 40px 0 35px; /* top-right-bottom-left */
+        margin: 30px 40px 0 35px; /* top-right-bottom-left */
         padding: 40px 10px 40px 10px; /* top-right-bottom-left */
         background: #FDFDFD;
         background: white;
@@ -603,28 +603,30 @@
 
     <div class="kotak kotak-container">
         <div class="rectangle-all">
+
             <div class="Rectangle">
                 <div class="text-container">
                     <div class="text-rectangle">Jumlah Pegawai</div>
-                    <div class="text-jumlah">52</div>
+                    <div class="text-jumlah">{{ $jumlahPegawai }}</div>
                 </div>
                 <img class="PegawaiImage" src="/images/pegawai.jpg">
             </div>
+
             <div class="Rectangle">
                 <div class="text-container">
                     <div class="text-rectangle">Jumlah Admin</div>
-                    <div class="text-jumlah">3</div>
+                    <div class="text-jumlah">{{ $jumlahAdmin }}</div>
                 </div>
                 <img class="PegawaiImage" src="/images/admin.jpg">
             </div>
-            <div class="Rectangle">
-    <div class="text-container">
-        <div class="text-rectangle">Jumlah Jabatan</div>
-        <div class="text-jumlah">{{ $positions ? count($positions) : 0 }}</div>
-    </div>
-    <img class="PegawaiImage" src="/images/jabatan.jpg">
-</div>
 
+            <div class="Rectangle">
+                <div class="text-container">
+                    <div class="text-rectangle">Jumlah Jabatan</div>
+                    <div class="text-jumlah">{{ $jumlahJabatan }}</div>
+                </div>
+                <img class="PegawaiImage" src="/images/jabatan.jpg">
+            </div>
 
             <div class="Rectangle">
                 <div class="text-container">
@@ -633,6 +635,7 @@
                 </div>
                 <img class="PegawaiImage" src="/images/jurnal.jpg">
             </div>
+             
         </div>
     </div>
 

@@ -3,10 +3,9 @@
 <head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>@yield('title', $title)</title>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.6/css/jquery.dataTables.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -36,7 +35,7 @@
             left: 0;
             width: 320px;
             height: 100%;
-            padding: 20px 0px;
+            /* padding: 20px 0px; */
             transition: all 0.3s ease;
             overflow-y: auto;
             z-index: 2;
@@ -68,23 +67,39 @@
             color: rgb(206, 240, 253);
             font-size: 14px;
         }
+        
         .wrapper .sidebar ul li a {
             display: block;
-            padding: 10px 23px;
-            /* border-bottom: 1px solid #10558d; */
+            padding: 5px 23px;
             color: rgb(241, 237, 237);
             font-size: 16px;
             position: relative;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             margin-left: 0px;
             margin-right: 30px;
             text-decoration: none;
+            transition: all 0.2s ease;
+            align-items: center;
         }
         .wrapper .sidebar ul li a:hover,
         .wrapper .sidebar ul li a.active {
             color: #0c7db1;
             background: white;
+            padding: 10px;
+            margin left: 10px;
             border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .wrapper .sidebar ul li a span.item {
+            margin-left: 10px; /* Adjust the initial left margin as needed */
+            transition: margin-left 0.2s ease; /* add transition property for a 0.2s delay */
+        }
+        
+        .wrapper .sidebar ul li a:hover span.icon,
+        .wrapper .sidebar ul li a.active span.icon {
+            margin-left: 25px;
+            transition: margin-left 0.2s ease;
         }
         .wrapper .sidebar ul li a:hover .icon,
         .wrapper .sidebar ul li a.active .icon {
@@ -128,6 +143,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
+            
         }
         
         .wrapper .section.active {
@@ -194,39 +210,51 @@
             </div>
             <ul>
                 <li>
-                    <a href="{{ route('home') }}" >
-                        <span class="icon"><i class="fas fa-home"></i></span>
-                        <span class="item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('dashboard.index')}}" >
+                    <a href="{{route('home.index')}}" >
                         <span class="icon"><i class="fas fa-desktop"></i></span>
                         <span class="item">Dashboard</span>
                     </a>
                 </li>
                 <li>
+                    <a href="{{route('calendar')}}">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">My Calendar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard.index') }}" >
+                        <span class="icon"><i class="fas fa-money-check-alt"></i></span>
+                        <span class="item">Penggajian</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{route('positions.index')}}">
-                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="icon"><i class="fas fa-user-tie"></i></span>
                         <span class="item">Data Jabatan</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('tunjangans.index')}}">
-                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="icon"><i class="fas fa-money-bill"></i></span>
                         <span class="item">Data Tunjangan</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('pegawais.index')}}">
-                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
                         <span class="item">Data Pegawai</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('divises.index')}}">
-                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="icon"><i class="fas fa-sitemap"></i></span>
                         <span class="item">Data Divisi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                        <span class="item">Laporan</span>
                     </a>
                 </li>
                 <li>
@@ -241,16 +269,17 @@
                         <span class="item">My Calendar</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('password') }}">
-                        <span class="icon"><i class="fas fa-key"></i></span>
-                        <span class="item">Change Password</span>
-                    </a>
-                </li>
+                
             </ul>
             <div class="footer">
                 <ul>
                     <li>
+                        <a href="{{ route('password') }}">
+                            <span class="icon"><i class="fas fa-key"></i></span>
+                            <span class="item">Change Password</span>
+                        </a>
+                    </li>
+                    <li style="margin-top: 20px;">
                         <a href="{{ route('logout') }}">
                             <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                             <span class="item">Logout</span>

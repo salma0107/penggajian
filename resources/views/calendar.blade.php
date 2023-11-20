@@ -227,7 +227,7 @@
 	body {
 		font-family: "Lato", Arial, sans-serif;
 		font-size: 16px;
-		line-height: 1.8;
+		/* line-height: 1.8; */
 		font-weight: normal;
 		background: #f8f9fd;
 		color: gray;

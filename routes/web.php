@@ -7,6 +7,8 @@ use App\Http\Controllers\PositionController;
 use App\Http\Controllers\TunjanganController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GajiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,14 @@ use App\Http\Controllers\DivisiController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/test', function () {
+    return 'Test route works!';
+});
+
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'register_action'])->name('register.action');
 Route::get('login', [UserController::class, 'login'])->name('login');
@@ -26,12 +36,16 @@ Route::post('login', [UserController::class, 'login_action'])->name('login.actio
 
 Route::middleware('auth')->group(
     function () {
-        Route::get('/', function () {
-            return view('home', ['title' => 'Beranda']);
-        })->name('home');
+        // Route::get('/', function () {
+        //     return view('home', ['title' => 'Beranda']);
+        // })->name('home');
+
         Route::get('password', [UserController::class, 'password'])->name('password');
         Route::post('password', [UserController::class, 'password_action'])->name('password.action');
         Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+        // Route Home
+        Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
         // Route Calendar
         Route::get('/calendar', function () {
@@ -45,6 +59,7 @@ Route::middleware('auth')->group(
 
         // Route Jabatan
         Route::resource('positions', PositionController::class);
+        Route::get('positions/exportpdf', [PositionController::class, 'exportPdf'])->name('exportpdf');
 
         // Route Tunjangan
         Route::resource('tunjangans', TunjanganController::class);
@@ -54,6 +69,12 @@ Route::middleware('auth')->group(
 
         // Route Divisi
         Route::resource('divises', DivisiController::class);
+
+        // Route Gaji
+        Route::resource('gajis', GajiController::class);
+
+        
+
 
         
         

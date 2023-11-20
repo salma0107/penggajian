@@ -56,7 +56,7 @@
 
 <div class="custom-container-up">
     <div class="text-end mb-1 mt-5 mr-5">
-        <a class="btn btn-danger" href="#">
+        <a class="btn btn-danger" href="{{ route('exportpdf') }}">
             <i class="fas fa-file-pdf"></i> Export PDF
         </a>
 
@@ -105,4 +105,12 @@
     </table>
 </div>
 
+@endsection
+
+@section('js')
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+  });
+</script>
 @endsection

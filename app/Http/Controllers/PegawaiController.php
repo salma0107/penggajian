@@ -5,14 +5,17 @@ use App\Models\Positions;
 use App\Models\Pegawais;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
     public function index()
     {
         $title = "Data Pegawai";
-        $pegawais = pegawais::orderBy('id','asc')->paginate(10);
-        return view('pegawais.index', compact(['pegawais' , 'title']));
+        $pegawais = Pegawais::orderBy('id', 'asc')->paginate(10);
+        $jumlahPegawai = DB::table('pegawais')->count();
+
+        return view('pegawais.index', compact(['pegawais', 'title', 'jumlahPegawai']));
     }
 
     public function create()

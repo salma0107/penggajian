@@ -98,30 +98,38 @@
         <a class="btn btn-success" href="#">
             <i class="fas fa-file-excel"></i> Export Excel
         </a>
-        <a class="btn btn-warning" href="{{ route('divises.create') }}">
+        <a class="btn btn-warning" href="{{ route('gajis.create') }}">
             <i class="fas fa-plus"></i> Create New
         </a>
     </div>
 </div>
 
 <div class="custom-container">
-    <table class="table">
+<table class="table">
         <thead>
             <tr>
                 <th scope="col">NO</th>
-                <th scope="col">NAMA DIVISI</th>
+                <th scope="col">NO SLIP</th>
+                <th scope="col">SLIP DATE</th>
+                <th scope="col">NAMA PEGAWAI</th>
+                <th scope="col">GAJI KOTOR</th>
+                <th scope="col">GAJI BERSIH</th>
                 <th scope="col">ACTIONS</th>
             </tr>
         </thead>
         <tbody>
             @php $no = 1 @endphp
-            @foreach ($divises as $data)
+            @foreach ($gajis as $data)
             <tr>
                 <td>{{ $no++ }}</td>
-                <td>{{ $data->nama_divisi }}</td>
+                <td>{{ $data->no_slip }}</td>
+                <td>{{ $data->slip_date }}</td>
+                <td>{{ $data->nama_pegawai }}</td>
+                <td>{{ $data->gaji_kotor }}</td>
+                <td>{{ $data->gaji_bersih }}</td>
                 <td>
-                    <form action="{{ route('divises.destroy', $data->id) }}" method="POST" id="deleteForm">
-                        <a class="btn btn-primary" href="{{ route('divises.edit', $data->id) }}">
+                    <form action="{{ route('gajis.destroy', $data->id) }}" method="POST" id="deleteForm">
+                        <a class="btn btn-primary" href="{{ route('gajis.edit', $data->id) }}">
                             <i class="fas fa-pencil-alt"></i> Edit
                         </a>
                         @csrf
