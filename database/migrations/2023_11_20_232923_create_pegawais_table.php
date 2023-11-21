@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('alamat');
             $table->unsignedBigInteger('position_id')->default(0);
+            $table->unsignedBigInteger('divise_id')->default(0);
             $table->string('golongan');
             $table->string('status_perkawinan');
             $table->string('no_rekening');

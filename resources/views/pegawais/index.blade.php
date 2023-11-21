@@ -80,6 +80,7 @@
                 <th scope="col">EMAIL</th>
                 <th scope="col">ALAMAT</th>
                 <th scope="col">JABATAN</th>
+                <th scope="col">DIVISI</th>
                 <th scope="col">GOLONGAN</th>
                 <th scope="col">STATUS</th>
                 <th scope="col">NO REKENING</th>
@@ -98,6 +99,12 @@
                 <td>{{
                     (isset($data->position->jabatan)) ?
                     $data->position->jabatan :
+                    'Tidak Ada'
+                    }}
+                </td>
+                <td>{{
+                    (isset($data->divise->nama_divisi)) ?
+                    $data->divise->nama_divisi :
                     'Tidak Ada'
                     }}
                 </td>

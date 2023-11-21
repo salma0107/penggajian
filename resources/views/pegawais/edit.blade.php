@@ -68,6 +68,22 @@
 
         <div class="col-md-6">
             <div class="form-group">
+                <strong>Divisi</strong>
+                <select name="divise_id" id="divise_id" class="form-control">
+                    @foreach ($divises as $divise)
+                        <option value="{{ $divise->id }}" {{ ($divise->id == $pegawai->divise_id) ? 'selected' : '' }}>
+                            {{ $divise->nama_divisi }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('divise_id')
+                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
                 <label for="golongan"><strong>Golongan</strong></label>
                 <div class="input-group">
                     <select name="golongan" class="form-control" id="golongan" value="{{ $pegawai->golongan }}">

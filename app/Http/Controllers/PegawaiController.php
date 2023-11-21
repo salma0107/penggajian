@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Positions;
 use App\Models\Pegawais;
+use App\Models\Divises;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -22,6 +23,7 @@ class PegawaiController extends Controller
     {
         $title = "Tambah Data pegawai";
         $positions = Positions::all();
+        $divises = Divises::all();
 
         // Calculate and assign the next employee number
         $latestEmployee = Pegawais::orderBy('id', 'desc')->first();
@@ -33,7 +35,7 @@ class PegawaiController extends Controller
             $nextEmployeeNumber = 'P-0001';
         }
 
-        return view('pegawais.create', compact('title', 'positions', 'nextEmployeeNumber'));
+        return view('pegawais.create', compact('title', 'positions', 'divises', 'nextEmployeeNumber'));
     }
 
 
@@ -45,6 +47,7 @@ class PegawaiController extends Controller
             'email' => 'required',
             'alamat' => 'required',
             'position_id' => 'required',
+            'divise_id' => 'required',
             'golongan' => 'required',
             'status_perkawinan' => 'required',
             'no_rekening' => 'required',
@@ -66,6 +69,7 @@ class PegawaiController extends Controller
             'email' => $validatedData['email'],
             'alamat' => $validatedData['alamat'],
             'position_id' => $validatedData['position_id'],
+            'divise_id' => $validatedData['divise_id'],
             'golongan' => $validatedData['golongan'],
             'status_perkawinan' => $validatedData['status_perkawinan'],
             'no_rekening' => $validatedData['no_rekening'],
@@ -77,15 +81,16 @@ class PegawaiController extends Controller
 
     public function show(Pegawais $pegawai)
     {
-        return view('pegawais.create', compact('title', 'positions', 'nextEmployeeNumber'));
+        return view('pegawais.create', compact('title', 'positions', 'divises', 'nextEmployeeNumber'));
     }
 
     public function edit(Pegawais $pegawai)
     {
         $title = "Edit Data Pegawai";
         $positions = Positions::all();
+        $divises = Divises::all();
 
-        return view('pegawais.edit', compact('title', 'pegawai', 'positions'));
+        return view('pegawais.edit', compact('title', 'pegawai', 'positions', 'divises'));
     }
 
     public function update(Request $request, Pegawais $pegawai)
@@ -95,6 +100,7 @@ class PegawaiController extends Controller
             'email' => 'required',
             'alamat' => 'required',
             'position_id' => 'required',
+            'divise_id' => 'required',
             'golongan' => 'required',
             'status_perkawinan' => 'required',
             'no_rekening' => 'required',
@@ -105,6 +111,7 @@ class PegawaiController extends Controller
             'email' => $validatedData['email'],
             'alamat' => $validatedData['alamat'],
             'position_id' => $validatedData['position_id'],
+            'divise_id' => $validatedData['divise_id'],
             'golongan' => $validatedData['golongan'],
             'status_perkawinan' => $validatedData['status_perkawinan'],
             'no_rekening' => $validatedData['no_rekening'],

@@ -216,12 +216,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('calendar')}}">
-                        <span class="icon"><i class="fas fa-cog"></i></span>
-                        <span class="item">My Calendar</span>
-                    </a>
-                </li>
-                <li>
                     <a href="{{ route('dashboard.index') }}" >
                         <span class="icon"><i class="fas fa-money-check-alt"></i></span>
                         <span class="item">Penggajian</span>

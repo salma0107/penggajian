@@ -14,6 +14,7 @@ class Pegawais extends Model
         'email',
         'alamat',
         'position_id',
+        'divise_id',
         'golongan',
         'status_perkawinan',
         'no_rekening',
@@ -22,5 +23,10 @@ class Pegawais extends Model
     public function position()
     {
         return $this->belongsTo(Positions::class, 'position_id');
+    }
+
+    public function divise()
+    {
+        return $this->belongsTo(Divises::class, 'divise_id');
     }
 }
