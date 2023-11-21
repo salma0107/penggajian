@@ -18,7 +18,6 @@ return new class extends Migration
             
             // Menambahkan kolom-kolom dari tabel pegawais
             $table->unsignedBigInteger('pegawai_id');
-            $table->string('nama_pegawai');
             $table->unsignedBigInteger('position_id')->default(0);
             $table->string('golongan');
             $table->string('status_perkawinan');
