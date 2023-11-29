@@ -317,7 +317,7 @@
 					<span>Register</span>
 				</button>
                 <p class="back">Already have an account?  
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('login') }}">
                         Login
                     </a>
                 </p>

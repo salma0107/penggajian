@@ -1,8 +1,15 @@
-@extends('app')
-@extends('layout')
-@section('content')
+<!doctype html>
+<html lang="en">
 
-<!-- <style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cetak Jabatan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
     .custom-container {
         margin: 0px 50px;
         max-width: 100%;
@@ -11,7 +18,8 @@
     }
 
     .custom-container-up {
-        margin: 50px 50px 10px 50px; /* top-right-bottom-left */
+        margin: 50px 50px 10px 50px;
+        /* top-right-bottom-left */
         max-width: 100%;
     }
 
@@ -44,30 +52,35 @@
     h1 {
         margin-top: 20px;
     }
-</style> -->
+</style>
 
-<h1>DATA JABATAN</h1>
-<div class="custom-container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">NO</th>
-                <th scope="col">JABATAN</th>
-                <th scope="col">GAJI POKOK</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            @php $no = 1 @endphp
-            @foreach ($positions as $data)
-            <tr>
-                <td>{{ $no++ }}</td>
-                <td>{{ $data->jabatan }}</td>
-                <td>{{ $data->gaji_pokok }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+<body>
+    <div class="custom-container">
 
-@endsection
+        <h1>DATA JABATAN</h1>
+        <br>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">NO</th>
+                    <th scope="col">JABATAN</th>
+                    <th scope="col">GAJI POKOK</th>
+                </tr>
+            </thead>
+            <tbody>
+                @php $no = 1 @endphp
+                @foreach ($positions as $data)
+                <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>{{ $data->jabatan }}</td>
+                    <td>{{ $data->gaji_pokok }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>

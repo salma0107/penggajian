@@ -3,14 +3,15 @@
 
 @if(session('success'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
-  {{session('success')}}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    {{session('success')}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
 </div>
 @endif
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
 <style>
     .custom-container {
@@ -21,8 +22,10 @@
     }
 
     .custom-container-up {
-        margin: 50px 50px 10px 50px; /* top-right-bottom-left */
+        margin: 50px 50px 5px 50px;
+        /* top-right-bottom-left */
         max-width: 100%;
+
     }
 
     /* Style the table */
@@ -54,6 +57,7 @@
     h1 {
         margin-top: 20px;
     }
+
     .img-fluid {
         margin-top: 0;
         margin-bottom: 10px;
@@ -78,46 +82,63 @@
     .close:hover span {
         color: white;
     }
+
 </style>
 
-<h1>DATA JABATAN</h1>
+<h1>LAPORAN PAYROLL</h1>
 
 <div class="custom-container-up">
-    <div class="text-end mb-1 mt-5 mr-5">
-        <a class="btn btn-danger" href="{{ route('exportpdf') }}">
+    <div class="text-end mb-2">
+        <a class="btn btn-danger" href="#">
             <i class="fas fa-file-pdf"></i> Export PDF
         </a>
-
         <a class="btn btn-success" href="#">
             <i class="fas fa-file-excel"></i> Export Excel
         </a>
-
-        <a class="btn btn-warning" href="{{ route('positions.create') }}">
+        <a class="btn btn-warning" href="{{ route('payrolls.create') }}">
             <i class="fas fa-plus"></i> Create New
         </a>
     </div>
 </div>
 
 <div class="custom-container">
-    <table class="table">
+<table class="table">
         <thead>
             <tr>
                 <th scope="col">NO</th>
+                <th scope="col">NO SLIP</th>
+                <th scope="col">TANGGAL</th>
+                <th scope="col">NIP</th>
+                <th scope="col">NAMA PEGAWAI</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">STATUS KARYAWAN</th>
+                <th scope="col">STATUS PERKAWINAN</th>
+                <th scope="col">DIVISI</th>
                 <th scope="col">JABATAN</th>
                 <th scope="col">GAJI POKOK</th>
+                <th scope="col">GAJI BERSIH</th>
                 <th scope="col">ACTIONS</th>
             </tr>
         </thead>
         <tbody>
             @php $no = 1 @endphp
-            @foreach ($positions as $data)
+            @foreach ($payrolls as $data)
             <tr>
                 <td>{{ $no++ }}</td>
-                <td>{{ $data->jabatan }}</td>
+                <td>{{ $data->no_slip }}</td>
+                <td>{{ $data->slip_date }}</td>
+                <td>{{ $data->pegawai_id }}</td>
+                <td>{{ $data->nama_pegawai }}</td>
+                <td>{{ $data->email }}</td>
+                <td>{{ $data->golongan }}</td>
+                <td>{{ $data->status_perkawinan }}</td>
+                <td>{{ $data->divise_id }}</td>
+                <td>{{ $data->position->jabatan }}</td>
                 <td>{{ $data->gaji_pokok }}</td>
+                <td>{{ $data->gaji_bersih }}</td>
                 <td>
-                    <form action="{{ route('positions.destroy', $data->id) }}" method="Post" id="deleteForm">
-                        <a class="btn btn-primary" href="{{ route('positions.edit', $data->id) }}">
+                    <form action="{{ route('payrolls.destroy', $data->id) }}" method="POST" id="deleteForm">
+                        <a class="btn btn-primary" href="{{ route('payrolls.edit', $data->id) }}">
                             <i class="fas fa-pencil-alt"></i> Edit
                         </a>
                         @csrf
@@ -156,12 +177,4 @@
 
 </div>
 
-@endsection
-
-@section('js')
-<script>
-  $(document).ready(function() {
-    $('#example').DataTable();
-  });
-</script>
 @endsection

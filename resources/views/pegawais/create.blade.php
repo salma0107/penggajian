@@ -105,12 +105,11 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label for="golongan"><strong>Golongan</strong></label>
+                <label for="golongan"><strong>Status Karyawan</strong></label>
                 <div class="input-group">
                     <select name="golongan" class="form-control" id="golongan">
-                        <option value="gol 1">gol 1</option>
-                        <option value="gol 2">gol 2</option>
-                        <option value="gol 3">gol 3</option>
+                        <option value="PKWT">PKWT</option>
+                        <option value="PKWTT">PKWTT</option>
                     </select>
                 </div>
                 @error('golongan')

@@ -29,4 +29,10 @@ class Pegawais extends Model
     {
         return $this->belongsTo(Divises::class, 'divise_id');
     }
+
+    public function payrolls()
+    {
+        return $this->hasMany(Payroll::class);
+    }
+
 }

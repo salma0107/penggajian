@@ -8,27 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Gajis extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'no_slip',
-        'tanggal_slip',
-        'pegawai_id',
-        'nama_pegawai',
-        'email',
-        'alamat',
+        'slip_date',
         'position_id',
-        'golongan',
-        'status_perkawinan',
-        'no_rekening',
-        'tunjangan',
-        'besar_tunjangan',
-        'gaji_kotor',
-        'gaji_bersih',
+        'gaji_pokok',
     ];
 
-    // Definisikan relasi dengan model Pegawai
-    public function pegawai()
+    // Define the relationship with the Position model
+    public function position()
     {
-        return $this->belongsTo(Pegawai::class, 'pegawai_id');
+        return $this->belongsTo(Positions::class, 'position_id');
     }
-
 }

@@ -9,6 +9,8 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GajiController;
+use App\Http\Controllers\PayrollController;
+use App\Http\Controllers\LaporanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,7 +61,7 @@ Route::middleware('auth')->group(
 
         // Route Jabatan
         Route::resource('positions', PositionController::class);
-        Route::get('positions/exportpdf', [PositionController::class, 'exportPdf'])->name('exportpdf');
+        Route::get('position/exportpdf', [PositionController::class, 'exportPdf'])->name('exportpdf');
 
         // Route Tunjangan
         Route::resource('tunjangans', TunjanganController::class);
@@ -73,10 +75,14 @@ Route::middleware('auth')->group(
         // Route Gaji
         Route::resource('gajis', GajiController::class);
 
-        
+        // Route Payroll
+        Route::resource('payrolls', PayrollController::class);
+
+        // Route Laporan
+        Route::resource('laporans', LaporanController::class);
+        Route::get('/laporans', 'LaporanController@index')->name('laporans.index');
 
 
-        
         
     }
 );

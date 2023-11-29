@@ -17,8 +17,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;
         }
+
         body {
             background-image: url('/images/white-wall.jpg');
             background-size: cover;
@@ -216,9 +216,21 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('dashboard.index') }}" >
+                    <a href="{{ route('gajis.index') }}" >
                         <span class="icon"><i class="fas fa-money-check-alt"></i></span>
                         <span class="item">Penggajian</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('payrolls.index') }}" >
+                        <span class="icon"><i class="fas fa-money-check-alt"></i></span>
+                        <span class="item">Payroll</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('divises.index')}}">
+                        <span class="icon"><i class="fas fa-sitemap"></i></span>
+                        <span class="item">Data Divisi</span>
                     </a>
                 </li>
                 <li>
@@ -240,13 +252,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('divises.index')}}">
-                        <span class="icon"><i class="fas fa-sitemap"></i></span>
-                        <span class="item">Data Divisi</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="{{route('laporans.index')}}">
                         <span class="icon"><i class="fas fa-chart-bar"></i></span>
                         <span class="item">Laporan</span>
                     </a>

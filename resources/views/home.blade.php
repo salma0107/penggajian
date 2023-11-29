@@ -187,10 +187,19 @@
 </head>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+        * {
+            list-style: none;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
     body {
-        font-family: "Lato", Arial, sans-serif;
+        /* font-family: "Lato", Arial, sans-serif; */
         font-size: 16px;
-        /* line-height: 1.8; */
         font-weight: normal;
         background: #f8f9fd;
         color: gray;
@@ -199,6 +208,18 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+
+    /* .text-rectangle,
+.text-jumlah,
+.dashboard-container {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+}
+
+.dashboard-container p {
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: 500;
+} */
 
     .rectangle-all {
         margin-top: 30px;
@@ -228,7 +249,6 @@
     .text-rectangle {
         color: black;
         font-size: 15px;
-        font-family: 'Alike Angular';
         font-weight: 400;
         letter-spacing: 0.38px;
         word-wrap: break-word;
@@ -238,7 +258,7 @@
     .text-jumlah {
         color: black;
         font-size: 40px;
-        font-family: Allerta;
+        /* font-family: Allerta; */
         font-weight: 400;
         word-wrap: break-word;
         margin-left: 15px;
@@ -580,7 +600,7 @@
         /* color: black; */
         color: rgb(5, 68, 104);
         font-size: 12px;
-        font-family: 'Open Sans', sans-serif;
+        /* font-family: 'Open Sans', sans-serif; */
         font-weight: 400;
         word-wrap: break-word;
         margin-bottom: 10px;
@@ -591,11 +611,12 @@
 
     <div style="margin-top: 25px; margin-left: 35px; margin-bottom: 15px;">
         <div
-            style="color: black; font-size: 35px; font-family: 'Open Sans', sans-serif; font-weight: 400; word-wrap: break-word">
+            style="color: black; font-size: 35px; font-weight: 400; word-wrap: break-word">
             DASHBOARD
+            
         </div>
         <div
-            style="color: #054468; font-size: 25px; font-family: 'Open Sans', sans-serif; font-weight: 400; word-wrap: break-word">
+            style="color: #054468; font-size: 25px; font-weight: 400; word-wrap: break-word">
             PT. INTI PINDAD MITRA SEJATI
         </div>
     </div>
@@ -643,7 +664,7 @@
     <div class="dashboard-container">
 
         <div class="words" style="text-align: justify;">
-        <p style="color: black; font-size: 28px; font-family: 'Open Sans', sans-serif; font-weight: 500; word-wrap: break-word; margin-bottom: 20px;">
+        <p style="color: black; font-size: 28px; font-weight: 500; word-wrap: break-word; margin-bottom: 20px;">
             Welcome to the Payroll System
         </p>
             <p>

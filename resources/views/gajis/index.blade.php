@@ -88,7 +88,7 @@
 
 </style>
 
-<h1>DATA DIVISI</h1>
+<h1>DATA PAYROLL</h1>
 
 <div class="custom-container-up">
     <div class="text-end mb-2">
@@ -111,9 +111,8 @@
                 <th scope="col">NO</th>
                 <th scope="col">NO SLIP</th>
                 <th scope="col">SLIP DATE</th>
-                <th scope="col">NAMA PEGAWAI</th>
-                <th scope="col">GAJI KOTOR</th>
-                <th scope="col">GAJI BERSIH</th>
+                <th scope="col">JABATAN</th>
+                <th scope="col">GAJI POKOK</th>
                 <th scope="col">ACTIONS</th>
             </tr>
         </thead>
@@ -124,9 +123,13 @@
                 <td>{{ $no++ }}</td>
                 <td>{{ $data->no_slip }}</td>
                 <td>{{ $data->slip_date }}</td>
-                <td>{{ $data->nama_pegawai }}</td>
-                <td>{{ $data->gaji_kotor }}</td>
-                <td>{{ $data->gaji_bersih }}</td>
+                <td>{{
+                    (isset($data->position->jabatan)) ?
+                    $data->position->jabatan :
+                    'Tidak Ada'
+                    }}
+                </td>
+                <td>{{ $data->gaji_pokok }}</td>
                 <td>
                     <form action="{{ route('gajis.destroy', $data->id) }}" method="POST" id="deleteForm">
                         <a class="btn btn-primary" href="{{ route('gajis.edit', $data->id) }}">

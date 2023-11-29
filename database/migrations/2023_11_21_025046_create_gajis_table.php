@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('gajis', function (Blueprint $table) {
             $table->id();
+            $table->string('no_slip');
+            $table->date('slip_date');
+             
+            $table->unsignedBigInteger('position_id')->default(0);
+            $table->integer('gaji_pokok')->default(0);
             $table->timestamps();
         });
     }
